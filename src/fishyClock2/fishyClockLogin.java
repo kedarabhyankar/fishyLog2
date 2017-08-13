@@ -81,6 +81,7 @@ public class fishyClockLogin extends JFrame {
 
 		// STUDENT ID
 		textField_1 = new JTextField();
+		textField.setFont(new Font("Tahoma", Font.PLAIN, 29));
 		textField_1.setBounds(895, 563, 157, 35);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
@@ -120,6 +121,7 @@ public class fishyClockLogin extends JFrame {
 		Button button = new Button("Register");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+					setVisible(false);
 					register.setVisible(true);
 			}
 		});

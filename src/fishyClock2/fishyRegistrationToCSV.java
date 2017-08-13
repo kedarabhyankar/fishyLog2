@@ -12,11 +12,11 @@ public class fishyRegistrationToCSV {
 	String studentID;
 	private static final String comma_delimeter = ",";
     private static final String new_line_delimeter = "\n";
-    private static final String file_header = "id,firstName,lastName";
+    private static final String file_header = "ID,Last Name,First Name";
 
 
 
-	public fishyRegistrationToCSV(String firstName, String LastName, String studentID) {
+	public fishyRegistrationToCSV(String studentID, String LastName, String firstName) {
 		this.firstName = firstName;
 		this.lastName = LastName;
 		this.studentID = studentID;
@@ -42,11 +42,10 @@ public class fishyRegistrationToCSV {
 			filewriter.append(new_line_delimeter);
 			filewriter.append(studentID);
 			filewriter.append(comma_delimeter);
-			filewriter.append(firstName);
-			filewriter.append(comma_delimeter);
 			filewriter.append(lastName);
+			filewriter.append(comma_delimeter);
+			filewriter.append(firstName);
 			filewriter.append(new_line_delimeter);
-			
 			System.out.println("CSV File created or written to successfully!");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
