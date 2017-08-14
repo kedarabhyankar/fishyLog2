@@ -18,13 +18,15 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Canvas;
 import java.awt.Button;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
 
-public class fishyClockLogin extends JFrame {
+public class fishyClockLogin extends JFrame{
 
 	
 	//declare all jframes accessible from here
 	fishyClockRegister register = new fishyClockRegister();
+	public static fishyVerifyThenLogin verify = new fishyVerifyThenLogin();
 	
 	//declare all vars here
 	private JPanel contentPane;
@@ -32,6 +34,7 @@ public class fishyClockLogin extends JFrame {
 	public JPasswordField passwordField;
 	public Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 	public JTextField textField_1;
+	public Label success;
 	public static Color darkerGrey = new Color(56,56,56);
 	public static Color lightGrey = new Color(87,87,87);
 	public static Color limeGreen = new Color(166,238,118);
@@ -125,9 +128,30 @@ public class fishyClockLogin extends JFrame {
 					register.setVisible(true);
 			}
 		});
-		button.setBounds(1011, 661, 79, 24);
+		button.setBounds(973, 661, 79, 24);
 		contentPane.add(button);
-
+		
+		//button for login
+		Button button_1 = new Button("Login");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0){
+				setVisible(false);
+				verify.setVisible(true);
+				
+			}
+		});
+		button_1.setBounds(731, 661, 79, 24);
+		contentPane.add(button_1);
+		
+		//success on account creation button
+		success = new Label("Your account was successfully created. Login using the form below to track your time.");
+		success.setForeground(Color.GREEN);
+		success.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		success.setBounds(546, 310, 808, 70);
+	}
+	public void setSuccessMessageVisible1()
+	{
+		success.setVisible(true);
 	}
 
 }

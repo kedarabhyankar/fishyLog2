@@ -24,10 +24,10 @@ public class fishyClockRegister extends JFrame {
 
 	// vars
 
-	public JTextField textField;
+	public JTextField fnField;
 	public JPasswordField passwordField;
-	public JTextField textField_1;
-	public JTextField textField_2;
+	public JTextField idField;
+	public JTextField lnField;
 	public JLabel txtpnError;
 	public static Color darkerGrey = new Color(56, 56, 56);
 	public static Color lightGrey = new Color(87, 87, 87);
@@ -108,25 +108,27 @@ public class fishyClockRegister extends JFrame {
 		contentPane.add(txtpnLastName);
 
 		// FIRST NAME FIELD
-		textField = new JTextField();
-		textField.setFont(new Font("Tahoma", Font.PLAIN, 35));
-		textField.setBounds(896, 499, 156, 35);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		fnField = new JTextField();
+		fnField.setFont(new Font("Tahoma", Font.PLAIN, 35));
+		fnField.setBounds(896, 499, 156, 35);
+		contentPane.add(fnField);
+		fnField.setColumns(10);
 
 		// STUDENT ID FIELD
-		textField_1 = new JTextField();
-		textField.setFont(new Font("Tahoma", Font.PLAIN, 35));
-		textField_1.setBounds(896, 627, 156, 35);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		idField = new JTextField();
+		idField.setFont(new Font("Tahoma", Font.PLAIN, 35));
+		idField.setFont(new Font("Tahoma", Font.PLAIN, 35));
+		idField.setBounds(896, 627, 156, 35);
+		contentPane.add(idField);
+		idField.setColumns(10);
 
 		// LAST NAME FIELD
-		textField_2 = new JTextField();
-		textField.setFont(new Font("Tahoma", Font.PLAIN, 35));
-		textField_2.setBounds(896, 563, 156, 35);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
+		lnField = new JTextField();
+		lnField.setFont(new Font("Tahoma", Font.PLAIN, 35));
+		lnField.setFont(new Font("Tahoma", Font.PLAIN, 35));
+		lnField.setBounds(896, 563, 156, 35);
+		contentPane.add(lnField);
+		lnField.setColumns(10);
 
 		// error label
 		txtpnError = new JLabel();
@@ -150,8 +152,8 @@ public class fishyClockRegister extends JFrame {
 
 	public void checkIfDataFieldsAreEmpty() {
 
-		if (textField.getText().trim().isEmpty() || textField_1.getText().trim().isEmpty()
-				|| textField_2.getText().trim().isEmpty()) {
+		if (fnField.getText().trim().isEmpty() || idField.getText().trim().isEmpty()
+				|| lnField.getText().trim().isEmpty()) {
 
 			contentPane.add(txtpnError);
 			return;
@@ -159,8 +161,8 @@ public class fishyClockRegister extends JFrame {
 
 		System.out.println("success adding new user");
 		System.out.println("successfully passed data to passToCSV.");
-		fishyRegistrationToCSV toCSV = new fishyRegistrationToCSV(textField_1.getText().trim(),
-				textField_2.getText().trim(), textField.getText().trim());
+		fishyRegistrationToCSV toCSV = new fishyRegistrationToCSV(idField.getText().trim(),
+				lnField.getText().trim(), fnField.getText().trim());
 		toCSV.passToCSV();
 
 	}

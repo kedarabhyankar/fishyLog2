@@ -2,8 +2,6 @@ package fishyClock2;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class fishyRegistrationToCSV {
 
@@ -13,6 +11,9 @@ public class fishyRegistrationToCSV {
 	private static final String comma_delimeter = ",";
     private static final String new_line_delimeter = "\n";
     private static final String file_header = "ID,Last Name,First Name";
+    
+    fishyClockLogin login = new fishyClockLogin();
+    fishyClockRegister register = new fishyClockRegister();
 
 
 
@@ -47,6 +48,9 @@ public class fishyRegistrationToCSV {
 			filewriter.append(firstName);
 			filewriter.append(new_line_delimeter);
 			System.out.println("CSV File created or written to successfully!");
+			register.setVisible(false);
+			login.setVisible(true);
+			login.setSuccessMessageVisible1();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("There's an error with passToCSV. Check the error message.");
